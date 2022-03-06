@@ -21,13 +21,8 @@ check.addEventListener('click', function(){
         message.textContent = "🚫 No Number!!!"
     }
     if (score.textContent > 0) {
-        if(guessValue > secretNumber){
-            message.textContent = "📈Too High!!!"
-            score.textContent-=5;
-        } else if(guessValue < secretNumber){
-            message.textContent = "📉Too Low!!!"
-            score.textContent-=5;
-        }
+        message.textContent = guessValue > secretNumber ? "📈Too High!!!" : "📉Too Low!!!";
+        score.textContent-=5;
     } 
     if (Number(score.textContent) === 0) {
         message.textContent = "🚩 You lost the game!!!"
